@@ -27,6 +27,7 @@ func main() {
 	byeTimer := timed.NewTimer(4*time.Second, func() { println("bye") })
 
 	timers := timed.Timers{helloTimer, byeTimer}
+
 	clock := timed.NewClock(1*time.Second, func() bool { return true }, timers)
 
 	clock.Run()
